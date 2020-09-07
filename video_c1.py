@@ -3,6 +3,7 @@ import socket
 import threading
 import pickle
 import datetime
+from queue import Queue 
 
 import cv2, numpy as np
 
@@ -23,17 +24,14 @@ class Client:
         iThread.start()
 
         while True:
-            #pdb debugging
-            #import pdb; pdb.set_trace()
-            #print("trying to debug c1's recev")
-            raw_data = b""
+            raw_data = Queue(maxsize = 10)
             while True:
-                print("recev of c1 ongoing!")
-                packet = self.sock.recv(4096)
-                if not packet: 
+                print("recev of c1 ongoing Starting another round...")
+                if raw_data.full(): 
                     break
-                raw_data += packet
+                raw_data.put(self.sock.recv(4096))
             print("recev of c1 finished!")
+            print(raw_data)
             data = pickle.loads(raw_data)
 
             if data[1] == "eye":
