@@ -1,5 +1,5 @@
 # File header: The following script receives a very simple message from this server to whatever client it connects to
-# Contributor: Jay Golden, Aayush Somani
+# Contributor: Jay Golden, Aayush Somani, Yifan Lin
 # latest update: 11/01/2020
 
 import socket
