@@ -16,5 +16,5 @@ clt, adr = s.accept()
 # msg notification
 print(f"Connection to {adr} established")
 print(f"Connection from {clt}")
-# server sending message
+# server sending a str message, encoded with utf-8 
 clt.send(bytes("count", "utf-8"))
