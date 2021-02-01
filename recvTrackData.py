@@ -6,7 +6,6 @@ socket = socket(AF_INET, SOCK_STREAM)
 
 host_ip = gethostbyname(gethostname())
 #host_ip = "192.168.0.1"
-Aayush_ip = "76.95.185.15"
 print('HOST IP:', host_ip)
 port = 40005
 socket_address = (host_ip, port)
