@@ -5,10 +5,10 @@ from socket import *
 socket = socket(AF_INET, SOCK_STREAM)
 
 #host_ip = gethostbyname(gethostname())
+# empty host_ip accepts all connections (wildcard)
 host_ip = ""
-#host_ip = ''
-print('HOST IP:', host_ip)
-port = 5053
+print('HOST IP:', host_ip) 
+port = 5053 # make sure port number matches the one in SendCoords.py
 socket_address = (host_ip, port)
 
 socket.bind(socket_address)
